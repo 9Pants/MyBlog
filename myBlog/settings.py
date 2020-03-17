@@ -14,9 +14,8 @@ import os
 import environ
 
 # environ setup
-# root = environ.Path(__file__) - 3  # get root of the project
 env = environ.Env()
-environ.Env.read_env()  # reading .env file
+environ.Env.read_env()
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -147,3 +146,9 @@ INTERNAL_IPS = [
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]

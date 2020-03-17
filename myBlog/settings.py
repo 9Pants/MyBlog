@@ -171,8 +171,13 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-DEFAULT_FROM_EMAIL = 'admin@9pantsblog.com'
+DEFAULT_FROM_EMAIL = 'admin@9pants.co.uk'
 
 # Email Configuration
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

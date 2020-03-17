@@ -1,0 +1,100 @@
+<!--templates/_base.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9Pants-Blog | {% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!--Fusion Charts-->
+    <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
+    <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.charts.js" %}"></script>
+    <script type="text/javascript" src="{% static "fusioncharts/themes/fusioncharts.theme.fusion.js" %}"></script>
+</head>
+
+<body>
+
+        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="{% url 'home' %}">9Pants Blog</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">First/Last Stats</a>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="rawDataMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Raw Data
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="rawDataMenu">
+                        <a class="dropdown-item" href="#">API Params</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Params</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Devices</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Machines</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Import Records</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Sensor Data</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Chart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+            {% if user.is_authenticated %}
+                
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                            <a class="dropdown-item" href="#">Change password</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Log Out</a>
+                        </div>
+                    </li>
+                </ul>
+            {% else %}
+            <form class="form-inline ml-auto">
+                <a href="#" class="btn btn-outline-secondary">Log In</a>
+            </form>
+            {% endif %}
+        </div>
+        </nav>
+
+    <div class='container'>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+<footer>
+    <div class="footer">
+        <div class="container">
+            <p class="text-center">&copy; 2020 Myblog-9Pants</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

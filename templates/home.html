@@ -1,0 +1,15 @@
+<!--templates/home.html-->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">My Blog</h1>
+            <p class="lead">Blog about all things Python and Django</p>
+        </div>
+    </div>
+    <img class='img-fluid' src="{% static 'images/maxresdefault.jpg' %}" alt="Responsive image">
+{% endblock content %}

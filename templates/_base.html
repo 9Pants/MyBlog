@@ -63,15 +63,15 @@
                             {{ user.username }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                            <a class="dropdown-item" href="#">Change password</a>
+                            <a class="dropdown-item" href="{% url 'account_change_password' %}">Change password</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Log Out</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a>
                         </div>
                     </li>
                 </ul>
             {% else %}
             <form class="form-inline ml-auto">
-                <a href="#" class="btn btn-outline-secondary">Log In</a>
+                <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Log In</a>
             </form>
             {% endif %}
         </div>

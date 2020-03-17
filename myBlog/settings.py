@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     #Local
     'pages.apps.PagesConfig',
+    'users.apps.UsersConfig',
 
     #Third-Party
     'crispy_forms',
@@ -120,6 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

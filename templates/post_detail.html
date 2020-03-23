@@ -4,14 +4,24 @@
 
 {% block content %}
 
-    <h1>Blog Post Detail</h1>
-
-    <div class='post-entry'>
-        <h2>{{ object.title }}</h2>
-        <p>{{ object.body }}</p>
+    <div class="card mb-2">
+        <div class="card-header text-muted">
+            <h2 class="card-title">{{ object.title }}</h2>
+        </div>
+        <div class="card-body text-muted">
+            <p class="card-text">{{ object.body }}</p>
+            <hr>
+            <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary ml-2">Edit</a>
+            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger ml-2">Delete</a>
+        </div>
+        <div class="card-footer text-muted">
+            {% for comment in post.comments.all %}
+                <p>
+                    <span class="font-weight-bold">{{ comment.author }}: </span>
+                    {{ comment }}
+                </p>
+            {% endfor %}
+        </div>
     </div>
-
-    <p><a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a></p>
-    <p><a href="{% url 'post_delete' post.pk %}">Delete Blog Post</a></p>
 
 {% endblock content %}

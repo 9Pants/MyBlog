@@ -5,12 +5,12 @@ from django.urls import reverse_lazy
 
 from .models import Post
 
-class BlogListView(LoginRequiredMixin, ListView):
+class BlogListView(ListView):
     model=Post
     template_name='blog.html'
     login_url='account_login'
 
-class BlogDetailView(LoginRequiredMixin, DetailView):
+class BlogDetailView(DetailView):
     model=Post
     template_name='post_detail.html'
     login_url='account_login'

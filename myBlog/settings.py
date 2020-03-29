@@ -100,14 +100,7 @@ WSGI_APPLICATION = 'myBlog.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': env.str('DB_NAME'),
-#         'USER': env.str('DB_USERNAME'),
-#         'PASSWORD': env.str('DB_PASSWORD'),
-#         'HOST': env.str('DB_HOST'),
-#         'PORT': env.str('DB_PORT'),
-    }
+    'default': {}
 }
 
 # Password validation
@@ -184,14 +177,14 @@ DEFAULT_FROM_EMAIL = 'admin@9pants.co.uk'
 # Email Configuration
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = env.str('EMAIL_HOST')
+EMAIL_HOST_USER = env.str('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env.str('EMAIL_PORT')
+EMAIL_USE_TLS = env.str('EMAIL_USE_TLS')
 
 # Security
-ALLOWED_HOSTS = ['.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['.ninepantsblog.herokuapp.com','localhost','127.0.0.1']
 if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
@@ -206,3 +199,13 @@ if ENVIRONMENT == 'production':
     import dj_database_url 
     prod_db  =  dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(prod_db)
+elif  ENVIRONMENT == 'development':
+    dev_db = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env.str('DB_NAME'),
+        'USER': env.str('DB_USERNAME'),
+        'PASSWORD': env.str('DB_PASSWORD'),
+        'HOST': env.str('DB_HOST'),
+        'PORT': env.str('DB_PORT'),
+    }
+    DATABASES['default'].update(dev_db)

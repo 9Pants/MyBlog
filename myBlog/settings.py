@@ -46,6 +46,21 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # Wagtail
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+
+    'modelcluster',
+    'taggit',
 
     #Local
     'pages.apps.PagesConfig',
@@ -73,6 +88,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'myBlog.urls'
@@ -195,6 +212,7 @@ if ENVIRONMENT == 'production':
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+    SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 
     import dj_database_url 
     prod_db  =  dj_database_url.config(conn_max_age=500)
@@ -209,3 +227,6 @@ elif  ENVIRONMENT == 'development':
         'PORT': env.str('DB_PORT'),
     }
     DATABASES['default'].update(dev_db)
+
+#Wagtail
+WAGTAIL_SITE_NAME = 'My Example Site'

@@ -6,3 +6,19 @@ body {
 h1 {
     color: rgb(0, 113, 188);
 }
+
+.rounded {
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: auto;
+  }
+  
+  .rounded img {
+	width: auto;
+	height: 100%;
+	margin-left: -50px;
+  }

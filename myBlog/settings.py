@@ -32,9 +32,6 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG_KEY')
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -66,6 +63,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
+    'cmsblog.apps.CmsblogConfig',
+    'streams.apps.StreamsConfig',
 
     #Third-Party
     'crispy_forms',
@@ -173,6 +172,9 @@ STATICFILES_FINDERS = [
 
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'

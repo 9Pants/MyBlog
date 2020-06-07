@@ -18,7 +18,7 @@
         <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'images/tech-icon-1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-            Not That David Mitchell
+            DMitchell
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,17 +26,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="{% url 'post' %}">Blog</a>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/blog-listings-page/">CMS Blog</a>
+                    <a class="nav-link" href="/pages/blog-listings-page/">Blog Posts</a>
                 </li>
-                {% if user.is_authenticated %}
+                {% comment %} {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'post_new' %}">+ Blog Post</a>
                     </li>
-                {% endif %}
+                {% endif %} {% endcomment %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
@@ -55,7 +55,7 @@
                 </ul>
             {% else %}
             <form class="form-inline ml-auto">
-                <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Log In</a>
+                <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Sign In</a>
             </form>
             {% endif %}
         </div>

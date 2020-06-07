@@ -4,18 +4,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>9Pants | {% block title %}{% endblock title %}</title>
+    <title>DMitchell | {% block title %}{% endblock title %}</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--CSS-->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/9744971a31.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'images/tech-icon-1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
             DMitchell
@@ -37,7 +40,7 @@
                         <a class="nav-link" href="{% url 'post_new' %}">+ Blog Post</a>
                     </li>
                 {% endif %} {% endcomment %}
-                <li class="nav-item">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
             {% if user.is_authenticated %}
@@ -59,20 +62,19 @@
             </form>
             {% endif %}
         </div>
-        </nav>
+    </nav>
 
-    <div class='container'>
+    <div class="container">
         {% block content %}
         {% endblock content %}
     </div>
 
-<footer>
-    <div class="footer text-muted">
-        <div class="container">
-            <p class="text-center">&copy; 2020 Not that David Mitchell</p>
-        </div>
-    </div>
-</footer>
+    <footer class="footer text-right p-3">
+        <a class="px-3" href="mailto:dave@dmitchell.dev"><i class="far fa-envelope fa-2x"></i></a>
+        <a class="px-3" href="https://twitter.com/DavidMi58457006"><i class="fab fa-twitter fa-2x"></i></a>
+        <a class="px-3" href="https://www.linkedin.com/in/davidmitchell5"><i class="fab fa-linkedin-in fa-2x"></i></a>
+    </footer>
+
 
   <!-- JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

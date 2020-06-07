@@ -1,7 +1,11 @@
 body {
 	margin-bottom: 40px; /* Margin bottom by footer height */
 	background-color: #EAEAEA;
-	/* background-color: rgb(255, 255, 255); */
+	font-family: 'Montserrat', sans-serif;
+	position: relative;
+	padding-bottom: 72px;
+	margin-bottom: -56px;
+	min-height: 100vh;
 }
 
 h1 {
@@ -29,18 +33,20 @@ h1 {
 	transform: translateY(-1px);
 }
 
-.rounded {
-	display: inline-block;
-	position: relative;
-	width: 200px;
+  .rounded {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: auto;
 	height: 200px;
-	overflow: hidden;
-	border-radius: 50%;
-	margin: auto;
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
 
-  .rounded img {
-	width: auto;
-	height: 100%;
-	margin-left: -50px;
-  }
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 56px;
+	background-color: #D4D4D4;
+	padding: 20px;
+}

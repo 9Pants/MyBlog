@@ -1,6 +1,6 @@
 body {
 	margin-bottom: 40px; /* Margin bottom by footer height */
-	background-color: rgb(50, 54, 57);
+	background-color: #EAEAEA;
 	/* background-color: rgb(255, 255, 255); */
 }
 
@@ -11,11 +11,22 @@ h1 {
 .blog-body {
 	background-color: rgb(255, 255, 255);
 	border-radius: 2%;
+	box-shadow: 1px 2px 5px #999;
 }
 
 .code-block {
 	color:  rgb(255, 255, 255);
 	background-color: rgb(206, 206, 206);
+}
+
+.card-common {
+	box-shadow: 1px 2px 5px #999;
+	transition: all .4s;
+}
+
+.card-common:hover{
+	box-shadow: 2px 3px 15px #999;
+	transform: translateY(-1px);
 }
 
 .rounded {
@@ -27,7 +38,7 @@ h1 {
 	border-radius: 50%;
 	margin: auto;
   }
-  
+
   .rounded img {
 	width: auto;
 	height: 100%;

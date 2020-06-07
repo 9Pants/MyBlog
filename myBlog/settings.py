@@ -29,9 +29,6 @@ ENVIRONMENT = env.str('ENVIRONMENT')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env.str('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG_KEY')
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -203,8 +200,9 @@ EMAIL_PORT = env.str('EMAIL_PORT')
 EMAIL_USE_TLS = env.str('EMAIL_USE_TLS')
 
 # Security
-ALLOWED_HOSTS = ['.ninepantsblog.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['.ninepantsblog.herokuapp.com','.dmitchell.dev','localhost','127.0.0.1']
 if ENVIRONMENT == 'production':
+    DEBUG = False
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
     SECURE_SSL_REDIRECT = True
@@ -220,6 +218,7 @@ if ENVIRONMENT == 'production':
     prod_db  =  dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(prod_db)
 elif  ENVIRONMENT == 'development':
+    DEBUG = True
     dev_db = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': env.str('DB_NAME'),

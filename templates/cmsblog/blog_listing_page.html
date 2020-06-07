@@ -14,28 +14,19 @@
 
     <div class="row mt-4">
         {% for card in cmsblog %}
-            <div class="col-md-6 d-flex align-items-stretch">
-                <div class="card mb-3 text-center">
+            <div class="col-md-12">
+                <div class="card mb-3 text-center card-common">
                     <div class="card-header">
                         <a href="{{ card.url }}">
-                            <h5 class="card-title">{{ card.title }}</h5>
+                            <h5 class="card-title pb-0 mb-0">{{ card.title }}</h5>
                         </a>
                     </div>
-                    <div class="card-body py-3px-3">
-                        <a href="{{ card.url }}">
-                            <picture>
-                                {% image card.large_image fill-573x369 as card_img %}
-                                <img src="{{ card_img.url }}" alt="{{ card_img.alt }}">
-                            </picture>
-                        </a>
-                        <a href="{{ card.url }}">
+                    <div class="card-body py-3 px-3">
+                        {% comment %} <a href="{{ card.url }}"> {% endcomment %}
                             {% if card.preamble  %}
-                                <p>{{ card.preamble }}</p>
+                                <p class="mb-0">{{ card.preamble }}</p>
                             {% endif %}
-                        </a>
-                    </div>
-                    <div class="card-footer">    
-                        <a href="{{ card.url }}" class="btn btn-link d-inline">More Details</a>
+                        {% comment %} </a> {% endcomment %}
                     </div>
                 </div>
             </div>

@@ -1,16 +1,9 @@
 {% extends '_base.html' %}
 {% load wagtailimages_tags %}
 
-{% block content %}
+{% block title %}Blog Listing{% endblock title %}
 
-    <div class="row">
-        <div class="col-sm-12">
-            <h1 class="cc-inner-title">{{ page.title }}</h1>
-            {% if page.subtitle %}
-                <p class="cc-inner-subtitle">{{ page.subtitle }}</p>
-            {% endif %}
-        </div>
-    </div>
+{% block content %}
 
     <div class="row mt-4">
         {% for card in cmsblog %}
@@ -21,7 +14,7 @@
                             <h5 class="card-title pb-0 mb-0">{{ card.title }}</h5>
                         </a>
                     </div>
-                    <div class="card-body py-3 px-3">
+                    <div class="card-body text-muted py-3 px-3">
                         {% comment %} <a href="{{ card.url }}"> {% endcomment %}
                             {% if card.preamble  %}
                                 <p class="mb-0">{{ card.preamble }}</p>

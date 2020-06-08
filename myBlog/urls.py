@@ -34,7 +34,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('',include('pages.urls')),
 
-    re_path(r'^cms/', include(wagtailadmin_urls)),
+    re_path(r'^goose/', include(wagtailadmin_urls)),
     re_path(r'^pages/', include(wagtail_urls)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

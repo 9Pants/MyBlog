@@ -29,6 +29,7 @@ class BlogListingPage(Page):
 class BlogPage(Page):
     # parent_page_types = ["home.HomePage", "flex.FlexPage"]
     preamble = models.TextField(blank = True)
+    link = blocks.Link()
     body = StreamField([
         ("richtext",wagtail_blocks.RichTextBlock(
             template='streams/simple_richtext_block.html',
@@ -39,9 +40,6 @@ class BlogPage(Page):
         ("large_image",ImageChooserBlock(
             help_text='This image will be cropped to 1200px by 775px',
             template='streams/large_image_block.html',
-        )),
-        ("link", blocks.Link(
-            help_text="Enter a link or select a page"
         )),
     ], null=True, blank=True)
 

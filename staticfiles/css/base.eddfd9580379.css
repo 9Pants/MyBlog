@@ -9,7 +9,7 @@ body {
 }
 
 body.home {
-	background-image: url(/static/images/jake-hills-mI02K_LxlfU-unsplash.jpg);
+	background-image: url("/static/images/jake-hills-mI02K_LxlfU-unsplash.c68248cee7b1.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -26,7 +26,7 @@ pre {
 }
 
 /* .landing {
-	background-image: url(/static/images/jake-hills-mI02K_LxlfU-unsplash.jpg);
+	background-image: url("/static/images/jake-hills-mI02K_LxlfU-unsplash.c68248cee7b1.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

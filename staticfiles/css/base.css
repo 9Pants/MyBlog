@@ -8,15 +8,33 @@ body {
 	min-height: 100vh;
 }
 
+body.home {
+	background-image: url(/static/images/jake-hills-mI02K_LxlfU-unsplash.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+}
+
 h1 {
     color: rgb(0, 113, 188);
 }
 
-.blog-body {
-	background-color: rgb(255, 255, 255);
-	border-radius: 2%;
-	box-shadow: 1px 2px 5px #999;
+pre {
+    overflow: auto;
 }
+
+/* .landing {
+	background-image: url(/static/images/jake-hills-mI02K_LxlfU-unsplash.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+	min-height: 100vh;
+	min-width: 100vw;
+} */
 
 .code-block {
 	color:  rgb(255, 255, 255);

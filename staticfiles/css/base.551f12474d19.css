@@ -8,15 +8,6 @@ body {
 	min-height: 100vh;
 }
 
-body.home {
-	background-image: url(/static/images/jake-hills-mI02K_LxlfU-unsplash.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	background-color: #464646;
-}
-
 h1 {
     color: rgb(0, 113, 188);
 }
@@ -25,16 +16,9 @@ pre {
     overflow: auto;
 }
 
-/* .landing {
-	background-image: url(/static/images/jake-hills-mI02K_LxlfU-unsplash.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	background-color: #464646;
-	min-height: 100vh;
-	min-width: 100vw;
-} */
+.landing {
+	background: url("/static/images/jake-hills-mI02K_LxlfU-unsplash.c68248cee7b1.jpg") no-repeat fixed;
+}
 
 .code-block {
 	color:  rgb(255, 255, 255);

@@ -17,10 +17,10 @@
     <script src="https://kit.fontawesome.com/9744971a31.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'images/tech-icon-1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="{% static 'images/brand-home.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
             DMitchell
         </a>
 

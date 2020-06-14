@@ -34,6 +34,10 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('',include('pages.urls')),
 
+    # Google Analytics
+    re_path('djga/', include('google_analytics.urls')),
+
+    # Wagtail
     re_path(r'^goose/', include(wagtailadmin_urls)),
     re_path(r'^pages/', include(wagtail_urls)),
 

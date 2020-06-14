@@ -18,6 +18,11 @@
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
+    {% load google_analytics_tags %}
+    <div style="display:none">
+        <img src="{% google_analytics %}" width="0" height="0" />
+    </div>
+
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'images/brand-home.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">

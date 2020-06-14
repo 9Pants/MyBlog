@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'allauth',
     'allauth.account',
+    'google_analytics',
 ]
 
 # Crispy Config
@@ -108,6 +109,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myBlog.wsgi.application'
 
+# Google Analytics
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': 'UA-169338107-1',
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

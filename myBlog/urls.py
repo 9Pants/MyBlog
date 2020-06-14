@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
+from wagtail.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
     # Django Admin
@@ -38,6 +39,7 @@ urlpatterns = [
     re_path('djga/', include('google_analytics.urls')),
 
     # Wagtail
+    path('sitemap.xml', sitemap),
     re_path(r'^goose/', include(wagtailadmin_urls)),
     re_path(r'^pages/', include(wagtail_urls)),
 

@@ -1,3 +1,3 @@
 # myBlog
 
-My Blog site using Wagtail for content management.
+My Blog site using Django and Wagtail for content management.

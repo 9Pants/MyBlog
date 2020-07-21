@@ -345,11 +345,11 @@
         },
         "wagtail": {
             "hashes": [
-                "sha256:23c5514d530ad2dbe81360e53abd38cfe4b42671e03018a9dd95ee941b4327f4",
-                "sha256:ec5305aba6bf75ca9313287ddf159b43ac4e7cdff771cfe0a9413b481baa433f"
+                "sha256:17169ea7c6a2cf2dc8f945f0a967424d7932843087df4897c813868d7f9cddc0",
+                "sha256:7dba2e5cebee2bb39e4c3db703eeb428b6ba323d72e5fbf384f1ce81f65f7e42"
             ],
             "index": "pypi",
-            "version": "==2.9"
+            "version": "==2.9.3"
         },
         "webencodings": {
             "hashes": [
